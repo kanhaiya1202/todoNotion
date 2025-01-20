@@ -1,0 +1,85 @@
+.allTodoListBody {
+    margin: 0.5rem;
+    background-color: rgba(128, 128, 128, 0.025);
+    text-align: center;
+    border-radius: 20px;
+    padding: 1rem;
+    justify-content: center;
+    width: 50vw;
+
+    .singleTodo {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 20px;
+        box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.139);
+        width: fit-content;
+
+
+        .todoListTitle {
+            text-align: center;
+        }
+
+        .allTodoBodyCont {
+            .todoCont {
+                display: flex;
+                justify-content: center;
+
+                .left {
+                    display: flex;
+                    justify-content: center;
+
+                    .checkBoxDiv {
+                        margin: auto;
+                        width: fit-content;
+                        display: flex;
+                        justify-content: center;
+
+
+
+                            #checkBoxButton {
+                                transform: scale(1.5);
+                            }
+                        }
+
+                    .todoTop {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .todoTitleDiv {
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                        }
+
+                        .todoDescDiv {
+                            height: 9vh;
+                            overflow: scroll;
+                            text-align: left;
+                        }
+
+                    }
+                }
+
+                .todoBottom {
+                    align-content: center;
+
+                    button {
+                        border: 0px;
+                    }
+
+                    button:hover {
+                        border: 0;
+                        color: white;
+                        background-color: red;
+                        box-shadow: 0 0 5px red;
+                        transition: all 300ms;
+                    }
+                }
+            }
+        }
+    }
+
+    .singleTodo:hover {
+        background-color: rgba(0, 0, 0, 0.139);
+    }
+}

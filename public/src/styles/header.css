@@ -1,0 +1,35 @@
+.header {
+    background-color: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    height: 12vh;
+    width: 70%;
+    align-items: center;
+    border-radius: 1rem;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    padding: auto;
+}
+
+.btnsCont {
+    display: flex;
+    justify-content: space-around;
+}
+
+button, input, textarea {
+    margin: 5px;
+    padding: 0.5rem 0.7rem;
+    border: 0;
+    border-radius: 20px;
+    font-weight: bolder;
+    font-size: 1rem;
+    transition: all 300ms;
+}
+
+.headerBtn:hover {
+    background-color: rgb(222, 252, 255);
+    color: rgb(0, 0, 49);
+    transition: all 300ms;
+}
