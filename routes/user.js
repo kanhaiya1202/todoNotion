@@ -1,5 +1,5 @@
 const Router = require("express");
-const {userModel } = require("../db");
+const { userModel } = require("../db");
 const jwt = require("jsonwebtoken");
 const JWT_USER_PASS = "user123";// later we will shift this to .env file
 const {auth } = require("../middleware/auth");
@@ -10,7 +10,7 @@ userRouter.post("/signup",async function(req,res){
 
     const {email ,name , password } =req.body;
 
-    const userExist = await mongoose.findOne({
+    const userExist = await userModel.findOne({
         email
     });
 
@@ -21,7 +21,7 @@ userRouter.post("/signup",async function(req,res){
         return; 
     }
 
-    await mongoose.createConnection({
+    await userModel.createConnection({
         email,
         password,
         name
@@ -35,7 +35,7 @@ userRouter.post("/signup",async function(req,res){
 userRouter.post("/signin",auth ,async function(req,res){
     const {email , password} = req.body;
 
-    const user = await mongoose.findOne({
+    const user = await userModel.findOne({
         email
     })
 

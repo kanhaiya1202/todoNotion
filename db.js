@@ -15,8 +15,7 @@ const organizationSchema = new Schema({
 
 const toDoSchema = new Schema({
   title:String,
-  description: String,
-  createdAt: { type: Date, default: date.now},
+  description: String
 });
 
 const userSchema = new Schema({
@@ -29,4 +28,4 @@ const toDoModel = mongoose.model("todo", toDoSchema);
 const organizationModel = mongoose.model("organization", organizationSchema);
 const userModel = mongoose.model("user", userSchema);
 
-module.exports(toDoModel, organizationModel, userModel);
+module.exports={toDoModel, organizationModel, userModel};
