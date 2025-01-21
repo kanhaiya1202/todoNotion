@@ -8,7 +8,7 @@ const organizationSchema = new Schema({
   name: String,
   creatorId: ObjectId,
   members:[{
-    user:ObjectId,
+    userId:ObjectId,
     role:{type:String, enum:['creator', 'member'], default:'member'}
   }]
 });
