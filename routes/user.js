@@ -1,8 +1,8 @@
-const Router = require("express");
+const {Router} = require("express");
 const { userModel } = require("../db");
 const jwt = require("jsonwebtoken");
 const JWT_USER_PASS = "user123";// later we will shift this to .env file
-const {auth } = require("../middleware/auth");
+const {userAuth } = require("../middleware/auth");
 
 const userRouter = Router();
 
@@ -21,7 +21,7 @@ userRouter.post("/signup",async function(req,res){
         return; 
     }
 
-    await userModel.createConnection({
+    await userModel.create({
         email,
         password,
         name
@@ -32,8 +32,8 @@ userRouter.post("/signup",async function(req,res){
     })
 });
 
-userRouter.post("/signin",auth ,async function(req,res){
-    const {email , password} = req.body;
+userRouter.post("/signin", userAuth ,async function(req,res){
+    const {email } = req.body;
 
     const user = await userModel.findOne({
         email
@@ -43,11 +43,12 @@ userRouter.post("/signin",auth ,async function(req,res){
         res.json({
             message:"user does not exist"
         })
+        return
     }
 
     const token = jwt.sign({
         id: user._id
-    },JWT_USER_PASS);
+    },JWT_USER_PASS); 
 
     res.json({
         token:token
