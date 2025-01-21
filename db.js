@@ -1,56 +1,32 @@
 const mongoose = require("mongoose");
 
-const organizationSchema = mongoose.schema({
-  name: { type: String, required: true },
-  creator: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-  },
-  members: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-  ],
-  todos: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-    },
-  ],
+const Schema = mongoose.Schema;
+const ObjectId = mongoose.Types.ObjectId;
+
+
+const organizationSchema = new Schema({
+  name: String,
+  creatorId: ObjectId,
+  members:[{
+    user:ObjectId,
+    role:{type:String, enum:['creator', 'member'], default:'member'}
+  }]
 });
 
-const toDoSchema = mongoose.Schema({
-  title: {
-    type: String,
-  },
-  description: {
-    type: String,
-  },
-  status: {
-    type: String,
-    enum: ["Pending", "Completed"],
-    default: Pending,
-  },
-  assignedTo: {
-    type: mongoose.Schema.Types.ObjectId,
-  },
-  completedBy: {
-    type: mongoose.Schema.Types.ObjectId,
-  },
-  organization: {
-    type: mongoose.Schema.Types.ObjectId,
-  },
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-  },
-  createdAt: {
-    type: Date,
-    default: date.now,
-  },
+const toDoSchema = new Schema({
+  title:String,
+  description: String,
+  createdAt: { type: Date, default: date.now},
 });
 
-const toDoSchemaModel = mongoose.model("user", toDoSchema);
+const userSchema = new Schema({
+  name: String,
+  email: {type:String, unique:true},
+  password:String
+});
+
+const toDoModel = mongoose.model("todo", toDoSchema);
 const organizationModel = mongoose.model("organization", organizationSchema);
 const userModel = mongoose.model("user", userSchema);
 
-module.exports(toDoSchemaModel, organizationModel, userModel);
+module.exports(toDoModel, organizationModel, userModel);
