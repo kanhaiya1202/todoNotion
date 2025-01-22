@@ -1,25 +1,28 @@
-
-.body{
-    margin: 10rem 8rem 1rem;
+.body {
+    margin-top: 10rem;
+    padding: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-a{
-    color: inherit;
-    text-decoration: none;
-}
-
-a::after{
-    color: inherit;
-    text-decoration: none;
-}
-
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
-.todo_card,.notion_card,.todo_org_card {
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a::after {
+    color: inherit;
+    text-decoration: none;
+}
+
+.todo_card,
+.notion_card,
+.todo_org_card {
     height: 50vh;
     width: 50vh;
     background-color: rgb(32, 32, 32);
@@ -28,4 +31,14 @@ a::after{
     padding: 3rem;
     overflow: scroll;
 
+}
+
+@media only screen and (max-width: 690px) {
+    .body {
+        flex-direction: column;
+        margin-top: 10rem;
+        justify-content: center;
+        align-items: center;
+
+    }
 }

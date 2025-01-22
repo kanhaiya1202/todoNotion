@@ -8,8 +8,8 @@ const Body = () => {
     return (
         <div className="body">
             <Link to="/user/mytodo"><TodoCard /></Link>
-            <Todo_orgCard />
-            <NotionCard />
+            <Link to="/user/mytodo"><Todo_orgCard /></Link>
+            <Link to="/user/mytodo"><NotionCard /></Link>
         </div>
     )
 }
