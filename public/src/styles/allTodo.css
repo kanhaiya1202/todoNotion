@@ -36,10 +36,10 @@
 
 
 
-                            #checkBoxButton {
-                                transform: scale(1.5);
-                            }
+                        #checkBoxButton {
+                            transform: scale(1.5);
                         }
+                    }
 
                     .todoTop {
                         display: flex;
@@ -81,5 +81,31 @@
 
     .singleTodo:hover {
         background-color: rgba(0, 0, 0, 0.139);
+    }
+}
+
+@media only screen and (max-width:789px) and (min-width:521px) {
+    .allTodoListBody {
+        width: 60vw;
+
+        .singleTodo {
+            .allTodoBodyCont {
+                .todoCont {
+                    .left {
+                        .todoTop {
+                            .todoDescDiv {
+                                height: 15vh;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:520px) {
+    .allTodoListBody {
+        width: 95%;
     }
 }

@@ -9,7 +9,7 @@
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        
+
         .todo-edit-cont {
             margin: 0.5rem;
             text-align: center;
@@ -70,6 +70,19 @@
                     flex-direction: column;
                     justify-content: space-evenly;
                 }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width:789px) {
+    .todoPage {
+        .todoPageCont .todo-edit-cont {
+            .todo-edit {
+                display: block;
+                justify-content: space-evenly;
+                align-items: center;
             }
         }
     }

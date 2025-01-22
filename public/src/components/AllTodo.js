@@ -12,9 +12,6 @@ const AllTodo = () => {
         <div className="allTodoBodyCont">
           <div className="todoCont">
             <div className="left">
-            <div className="checkBoxDiv">
-              <input type="checkbox" id="checkBoxButton"></input>
-            </div>
             <div className="todoTop">
               <div className="todoTitleDiv">Title</div>
               <div className="todoDescDiv">
@@ -46,9 +43,6 @@ const AllTodo = () => {
         <div className="allTodoBodyCont">
           <div className="todoCont">
             <div className="left">
-            <div className="checkBoxDiv">
-              <input type="checkbox" id="checkBoxButton"></input>
-            </div>
             <div className="todoTop">
               <div className="todoTitleDiv">Title</div>
               <div className="todoDescDiv">
@@ -80,9 +74,6 @@ const AllTodo = () => {
         <div className="allTodoBodyCont">
           <div className="todoCont">
             <div className="left">
-            <div className="checkBoxDiv">
-              <input type="checkbox" id="checkBoxButton"></input>
-            </div>
             <div className="todoTop">
               <div className="todoTitleDiv">Title</div>
               <div className="todoDescDiv">
@@ -114,9 +105,6 @@ const AllTodo = () => {
         <div className="allTodoBodyCont">
           <div className="todoCont">
             <div className="left">
-            <div className="checkBoxDiv">
-              <input type="checkbox" id="checkBoxButton"></input>
-            </div>
             <div className="todoTop">
               <div className="todoTitleDiv">Title</div>
               <div className="todoDescDiv">
