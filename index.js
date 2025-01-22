@@ -15,7 +15,7 @@ app.use("/user", userRouter);
 //app.use("/myTodo", myTodoRouter);
 
 async function main(){
-  await mongoose.connect("mongodb+srv://viveksanandiya787:d7yqVkzeapL1ac7u@cluster0.7f2f6.mongodb.net/todoNotion")
+  await mongoose.connect("mongodb+srv")
   //process.env.MONGO_URL is just the url on our mongoDB
   //it access this url in .env file where MONGO_URL = add your own mongo url
   app.listen(3000);
